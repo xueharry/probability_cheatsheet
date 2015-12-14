@@ -108,23 +108,6 @@
 %%% TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-    {\color{blue} \Large{\textbf{Probability Cheatsheet v2.0}}} \\
-   % {\Large{\textbf{Probability Cheatsheet}}} \\
-    % comment out line with \color{blue} and uncomment above line for b&w
-\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ATTRIBUTIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\scriptsize
-
-Compiled by William Chen (\url{http://wzchen.com}) and Joe Blitzstein, with contributions from Sebastian Chiu, Yuan Jiang, Yuqi Hou, and Jessy Hwang. Material based on Joe Blitzstein's (\texttt{\href{http://twitter.com/stat110}{@stat110}}) lectures (\url{http://stat110.net}) and Blitzstein/Hwang's Introduction to Probability textbook (\url{http://bit.ly/introprobability}). Licensed under \texttt{\href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}. Please share comments, suggestions, and errors at \url{http://github.com/wzchen/probability_cheatsheet}.
-
-\begin{center}
-    Last Updated \today
-\end{center}
 
 % Cheatsheet format from
 % http://www.stdout.org/$\sim$winston/latex/
@@ -155,21 +138,9 @@ Compiled by William Chen (\url{http://wzchen.com}) and Joe Blitzstein, with cont
 
 
 % \end{description}
-    \subsection{Multiplication Rule} 
-    \begin{minipage}{\linewidth}
-            \centering
-            \includegraphics[width=2in]{figures/icecream.pdf}
-        \end{minipage}
-        
- Let's say we have a compound experiment (an experiment with multiple components). If the 1st component has $n_1$ possible outcomes, the 2nd component has $n_2$ possible outcomes, \dots, and the $r$th component has $n_r$ possible outcomes, then overall there are $n_1n_2 \dots n_r$ possibilities for the whole experiment.
  
 \subsection{Sampling Table}
-   \begin{minipage}{\linewidth}
-            \centering
-             \includegraphics[width=1.2in]{figures/jar.pdf}
-        \end{minipage}
-      %  \begin{center}
-    The sampling table gives the number of possible samples of size $k$ out of a population of size $n$, under various assumptions about how the sample is collected. 
+
         %\begin{table}[H]
         \begin{center}
                 \setlength{\extrarowheight}{7pt}
@@ -183,8 +154,6 @@ Compiled by William Chen (\url{http://wzchen.com}) and Joe Blitzstein, with cont
     % \item[Experiments/Outcomes] - An experiment generates an outcome from a pre-determined list. For example, a dice roll generates outcomes in the set $\{1, 2, 3, 4, 5, 6\}$
     % \item[Sample Space] - The sample space, denoted $\Omega$, is the set of possible outcomes. Note that the probability of this event is 1, since something in the sample space will always occur.
     % \item[Event] - An event is a subset of the sample space, or a collection of possible outcomes of an experiment. We say that the event has occurred if any of the outcomes in the event have happened.
-    \subsection{Naive Definition of Probability}  {If all outcomes are equally likely}, the probability of an event $A$ happening is:
-        \[P_{\textrm{naive}}(A) = \frac{\textnormal{number of outcomes favorable to $A$}}{\textnormal{number of outcomes}}\]
 
 \section{Thinking Conditionally} \smallskip \hrule height 2pt \smallskip
 
@@ -327,10 +296,7 @@ The \emph{posterior odds} of $A$ are the \emph{likelihood ratio} times the \emph
 \item[Probability Mass Function (PMF)] 
 Gives the probability that a \emph{discrete} random variable takes on the value $x$.
 \[ p_X(x) = P(X=x) \]
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=2in]{figures/Binpmf.pdf}
-        \end{minipage}
+
 The PMF satisfies
 \[p_X(x) \geq 0 \textrm{ and } \sum_x p_X(x) = 1 \]
 
@@ -338,10 +304,7 @@ The PMF satisfies
 \item[Cumulative Distribution Function (CDF)] 
 Gives the probability that a random variable is less than or equal to $x$.
 \[F_X(x) = P(X \leq x)\]
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=2in]{figures/Bincdf.pdf}
-        \end{minipage}
+
 
 The CDF is an increasing, right-continuous function with
 \[F_X(x) \to 0 \textrm{ as $x \to -\infty$ and } F_X(x) \to 1 \textrm{ as $x \to \infty$} \]
@@ -360,11 +323,6 @@ $P(X=x, Y=y) = P(X = x)P(Y = y)$
 \begin{center}
 $E(X) = \sum\limits_{i}x_iP(X=x_i)$
 \end{center}
-
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=2in]{figures/linearity.pdf}
-        \end{minipage}
 
 
 \item[Linearity] For any r.v.s $X$ and $Y$, and constants $a,b,c,$ 
@@ -419,10 +377,6 @@ A PDF is nonnegative and integrates to $1$. By the fundamental theorem of calcul
 \begin{align*} 
     F(x) &=  \int_{-\infty}^x f(t)dt  
    \end{align*}
-   \begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=2in]{figures/Logisticpdfcdf.pdf}
-        \end{minipage}
    To find the probability that a CRV takes on a value in an interval, integrate the PDF over that interval.
       \begin{align*} 
     F(b) - F(a)  &=  \int^b_a f(x)dx
@@ -504,10 +458,6 @@ In the discrete case, $X$ and $Y$ have a \textbf{joint PMF}
 $$p_{X,Y}(x,y) = P(X=x,Y=y).$$ In the continuous case, they have a \textbf{joint PDF}
 \[f_{X,Y}(x,y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x,y).\]
 The joint PMF/PDF must be nonnegative and sum/integrate to 1.
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=1.0in]{figures/jointPDF.pdf}
-        \end{minipage}
 \subsection{Conditional Distributions}
 \textbf{Conditioning and Bayes' rule for discrete r.v.s}
 \[P(Y=y|X=x) = \frac{P(X=x, Y=y)}{P(X=x)} = \frac{P(X=x|Y=y)P(Y=y)}{P(X=x)}\]
@@ -774,11 +724,7 @@ For irreducible, aperiodic chains, the stationary distribution exists, is unique
 \textbf{Reversibility Condition Implies Stationarity}  If you have a PMF $\vec{s}$ and a Markov chain with transition matrix $Q$, then $s_iq_{ij} = s_jq_{ji}$ for all states $i, j$ implies that $\vec{s}$ is stationary.
 
 \subsection{Random Walk on an Undirected Network}
- \begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=1.6in]{figures/network1.pdf}
-        \end{minipage}
-\medskip
+
 
 If you have a collection of \textbf{nodes}, pairs of which can be connected by undirected \textbf{edges}, and a Markov chain is run by going from the current node to a uniformly random node that is connected to it by an edge, then  this is a random walk on an undirected network. The stationary distribution of this chain is proportional to the \textbf{degree sequence} (this is the sequence of degrees, where the degree of a node is how many edges are attached to it). For example, the stationary distribution of random walk on the network shown above is proportional to $(3,3,2,4,2)$, so it's $(\frac{3}{14}, \frac{3}{14}, \frac{3}{14}, \frac{4}{14}, \frac{2}{14})$. 
 
@@ -865,11 +811,6 @@ Equivalently,
 \end{description}
 
 \subsection{Gamma Distribution}
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=1.9in]{figures/gammapdfs.pdf}
-        \end{minipage}
-\medskip
 Let us say that $X$ is distributed $\Gam(a, \lambda)$. We know the following:
 \begin{description}
     \item[Story] You sit waiting for shooting stars, where the waiting time for a star is distributed $\Expo(\lambda)$. You want to see $n$ shooting stars before you go home. The total waiting time for the $n$th shooting star is $\Gam(n,\lambda)$.
@@ -885,11 +826,6 @@ Let us say that $X$ is distributed $\Gam(a, \lambda)$. We know the following:
 \end{description}
 
 \subsection{Beta Distribution}
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=1.9in]{figures/Betapdfs.pdf}
-        \end{minipage}
-\medskip
 
 \begin{description}
 
@@ -958,11 +894,6 @@ Let us say that $X$ is distributed $\chi^2_n$. We know the following:
 \end{description}
 
 \subsection{Binomial Distribution} 
-\begin{minipage}{\linewidth}
-            \centering
-\includegraphics[width=1.3in]{figures/Bin10_05.pdf}
-        \end{minipage}
-
 Let us say that $X$ is distributed \Bin($n,p$). We know the following:
 \begin{description}
     \item[Story] $X$ is the number of ``successes" that we will achieve in $n$ independent trials, where each trial is either a success or a failure, each with the same probability $p$ of success. We can also write $X$ as a sum of multiple independent $\Bern(p)$ random variables. Let $X \sim \Bin(n, p)$ and $X_j \sim \Bern(p)$, where all of the Bernoullis are independent. Then
@@ -1119,23 +1050,8 @@ A convolution of $n$ random variables is simply their sum. For the following res
 You can sometimes solve complicated-looking integrals by pattern-matching to a gamma or beta integral:
 \[ \int_0^\infty x^{t-1}e^{-x}\, dx = \Gamma(t) \hspace{1 cm} \int_0^1 x^{a - 1}(1-x)^{b-1}\, dx = \frac{\Gamma(a)\Gamma(b)}{\Gamma(a + b)} \]
 Also, $\Gamma(a+1) = a \Gamma(a)$, and $\Gamma(n) = (n - 1)!$ if $n$ is a positive integer. 
-\subsection{Euler's Approximation for Harmonic Sums}
-\[ 1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n} \approx \log n + 0.577 \dots\]
-\subsection{Stirling's Approximation for Factorials}
-\[ n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n\]
-
-\section{Miscellaneous Definitions} \smallskip \hrule height 2pt \smallskip
-
-\begin{description}
-\item[Medians and Quantiles] Let $X$ have CDF $F$. Then $X$ has median $m$ if $F(m) \geq 0.5$ and $P(X \geq m) \geq 0.5$. For $X$ continuous, $m$ satisfies $F(m)=1/2$. In general, the $a$th quantile of $X$ is $\min \{x: F(x)\geq a\}$; the median is the case $a=1/2$.
-\item[log] Statisticians generally use $\log$ to refer to natural log (i.e., base $e$).
-\item[i.i.d r.v.s] Independent, identically-distributed random variables.
-
-\end{description}
 
 \section{Example Problems} \smallskip \hrule height 2pt \smallskip
-Contributions from Sebastian Chiu
-
 \subsection{Calculating Probability}
 A textbook has $n$ typos, which are randomly scattered amongst its $n$ pages, independently. You pick a random page. What is the probability that it has no typos? \textbf{Answer:} There is a $\left( 1 - \frac{1}{n} \right)$ probability that any specific typo isn't on your page, and thus a $\boxed{\left( 1 - \frac{1}{n} \right)^n}$ probability that there are no typos on your page. For $n$ large, this is approximately $e^{-1} = {1/e}$.
 
@@ -1232,133 +1148,8 @@ William and Sebastian play a modified game of Settlers of Catan, where every tur
 \end{enumerate}
 
 
-\section{Problem-Solving Strategies} \smallskip \hrule height 2pt \smallskip
-
-Contributions from Jessy Hwang, Yuan Jiang, Yuqi Hou
-\begin{enumerate}
-\item \textbf{Getting started.} Start by \emph{defining relevant events and random variables}. (``Let $A$ be the event that I pick the fair coin''; ``Let $X$ be the number of successes.'') Clear notion is important for clear thinking! Then decide what it is that you're supposed to be finding, in terms of your notation (``I want to find $P(X=3|A)$''). Think about what type of object your answer should be (a number? A random variable? A PMF? A PDF?) and what it should be in terms of.
-
-\emph{Try simple and extreme cases}. To make an abstract experiment more concrete, try \emph{drawing a picture} or making up numbers that could have happened. Pattern recognition: does the structure of the problem resemble something we've seen before?
-\item \textbf{Calculating probability of an event.} Use counting principles if the naive definition of probability applies. Is the probability of the complement easier to find? Look for symmetries. Look for something to condition on, then apply Bayes' Rule or the Law of Total Probability. 
-\item \textbf{Finding the distribution of a random variable.} First make sure you need the full distribution not just the mean (see next item). Check the \emph{support} of the random variable: what values can it take on? Use this to rule out distributions that don't fit.  Is there a \emph{story} for one of the named distributions that fits the problem at hand?  Can you write the random variable as a function of an r.v. with a known distribution, say $Y = g(X)$?
-\item \textbf{Calculating expectation.} If it has a named distribution, check out the table of distributions. If it's a function of an r.v. with a named distribution, try LOTUS. If it's a count of something, try breaking it up into indicator r.v.s. If you can condition on something natural, consider using Adam's law. 
-\item \textbf{Calculating variance.} Consider independence, named distributions, and LOTUS. If it's a count of something, break it up into a sum of indicator r.v.s. If it's a sum, use properties of covariance. If you can condition on something natural, consider using Eve's Law.
-\item \textbf{Calculating $E(X^2)$.}  Do you already know $E(X)$ or $\var(X)$? Recall that $\var(X) = E(X^2) - (E(X))^2$. Otherwise try LOTUS.
-\item \textbf{Calculating covariance.} Use the properties of covariance. If you're trying to find the covariance between two components of a Multinomial distribution, $X_i, X_j$, then the covariance is $-np_ip_j$ for $i \neq j$.
-\item \textbf{Symmetry.} If $X_1,\dots,X_n$ are i.i.d., consider using symmetry.
-\item \textbf{Calculating probabilities of orderings.} Remember that all $n!$ ordering of i.i.d.~continuous random variables $X_1,\dots,X_n$ are equally likely.
-\item \textbf{Determining independence.} There are several equivalent definitions. Think about simple and extreme cases to see if you can find a counterexample.
-\item \textbf{Do a painful integral.} If your integral looks painful, see if you can write your integral in terms of a known PDF (like Gamma or Beta), and use the fact that PDFs integrate to $1$?
-\item \textbf{Before moving on.} Check some simple and extreme cases, check whether the answer seems plausible, check for biohazards.\end{enumerate}
-
-
-\section{Biohazards} \smallskip \hrule height 2pt \smallskip
-
-Contributions from Jessy Hwang
-
-\begin{enumerate} 
-\item \textbf{Don't misuse the naive definition of probability.}   When answering ``What is the probability that in a group of 3 people, no two have the same birth month?'', it is \emph{not} correct to treat the people as indistinguishable balls being placed into 12 boxes, since that assumes the list of birth months \{January, January, January\} is just as likely as the list \{January, April, June\}, even though the latter is six times more likely. \\ 
-\item \textbf{Don't confuse unconditional, conditional, and joint probabilities.}  In applying $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$, it is \emph{not} correct to say ``$P(B) = 1$ because we know  $B$ happened''; $P(B)$ is the \emph{prior} probability of $B$. Don't confuse $P(A|B)$ with $P(A,B)$. \\
-\item \textbf{Don't assume independence without justification.}  In the matching problem, the probability that card 1 is a match and card 2 is a match is not $1/n^2$.  Binomial and Hypergeometric are often confused; the trials are independent in the Binomial story and dependent in the Hypergeometric story. \\
-\item \textbf{Don't forget to do sanity checks.} Probabilities must be between $0$ and $1$. Variances must be $\geq 0$. Supports must make sense. PMFs must sum to $1$. PDFs must integrate to $1$. \\
-\item \textbf{Don't confuse random variables, numbers, and events.}  Let $X$ be an r.v. Then $g(X)$ is an r.v. for any function $g$. In particular, $X^2$, $|X|$, $F(X)$, and $I_{X>3}$ are r.v.s. $P(X^2 < X | X \geq 0), E(X), \var(X), $ and $g(E(X))$ are numbers. $X = 2$ and $F(X) \geq -1$ are events. It does not make sense to write $\int_{-\infty}^\infty F(X) dx$, because $F(X)$ is a random variable. It does not make sense to write $P(X)$, because $X$ is not an event. \\
-\item \textbf{Don't confuse a random variable with its distribution.}  To get the PDF of $X^2$, you can't just square the PDF of $X$. The right way is to use transformations. To get the PDF of $X + Y$, you can't just add the PDF of $X$ and the PDF of $Y$. The right way is to compute the \hyperref[convolutions]{convolution}.
-\item \textbf{Don't pull non-linear functions out of expectations.} $E(g(X))$ does not equal $g(E(X))$ in general. The St. Petersburg paradox is an extreme example.  See also Jensen's inequality. The right way to find $E(g(X))$ is with \hyperref[lotus]{LOTUS}.
-\end{enumerate}
-
-\vspace{1.5in}
-
-\section{Distributions in R} \smallskip \hrule height 2pt \smallskip
-
-\bigskip
-
-\begin{center}
-\begin{tabular}{cc}
-\hline
-\textbf{Command} & \textbf{What it does} \\
-\hline
-\texttt{help(distributions)} & shows documentation on distributions\\
-\texttt{dbinom(k,n,p)} & PMF $P(X=k)$ for $X \sim \Bin(n,p)$\\
-\texttt{pbinom(x,n,p)} & CDF $P(X \leq x)$ for $X \sim \Bin(n,p)$\\
-\texttt{qbinom(a,n,p)} &   $a$th quantile for $X \sim \Bin(n,p)$\\
-\texttt{rbinom(r,n,p)} &  vector of $r$ i.i.d.~$\Bin(n,p)$ r.v.s\\
-\texttt{dgeom(k,p)} & PMF $P(X=k)$ for $X \sim \Geom(p)$\\
-\texttt{dhyper(k,w,b,n)} & PMF $P(X=k)$ for $X \sim \HGeom(w,b,n)$\\
-\texttt{dnbinom(k,r,p)} & PMF $P(X=k)$ for $X \sim \NBin(r,p)$\\
-\texttt{dpois(k,r)} & PMF $P(X=k)$ for $X \sim \Pois(r)$\\
-\texttt{dbeta(x,a,b)} & PDF $f(x)$ for $X \sim \Beta(a,b)$\\
-\texttt{dchisq(x,n)} & PDF $f(x)$ for $X \sim \chi^2_n$\\
-\texttt{dexp(x,b)} & PDF $f(x)$ for $X \sim \Expo(b)$\\
-\texttt{dgamma(x,a,r)} & PDF $f(x)$ for $X \sim \Gam(a,r)$\\
-\texttt{dlnorm(x,m,s)} & PDF $f(x)$ for $X \sim \mathcal{LN}(m,s^2)$\\
-\texttt{dnorm(x,m,s)} & PDF $f(x)$ for $X \sim \N(m,s^2)$\\
-\texttt{dt(x,n)} & PDF $f(x)$ for $X \sim t_n$\\
-\texttt{dunif(x,a,b)} & PDF $f(x)$ for $X \sim \Unif(a,b)$\\
-\hline
-\end{tabular}
-\end{center}
-
-The table above gives R commands for working with various named distributions. Commands analogous to \texttt{pbinom}, \texttt{qbinom}, and \texttt{rbinom} work for the other distributions in the table. For example, \texttt{pnorm}, \texttt{qnorm}, and \texttt{rnorm} can be used to get the CDF,  quantiles, and random generation for the Normal.  For the Multinomial, \texttt{dmultinom} can be used for calculating the joint PMF and \texttt{rmultinom} can be used for generating random vectors. For the Multivariate Normal, after installing and loading the \texttt{mvtnorm} package \texttt{dmvnorm} can be used for calculating the joint PDF and \texttt{rmvnorm} can be used for generating random vectors.
-
-\vspace{4in}
-
-
-\section{Recommended Resources} \smallskip \hrule height 2pt \smallskip
-
-\bigskip
-
-\begin{itemize}
-\item Introduction to Probability Book (\url{http://bit.ly/introprobability})
-\item Stat 110 Online (\url{http://stat110.net})
-\item Stat 110 Quora Blog (\url{https://stat110.quora.com/})
-\item Quora Probability FAQ (\url{http://bit.ly/probabilityfaq})
-\item R Studio (\url{https://www.rstudio.com})
-\item LaTeX File (\texttt{\href{https://github.com/wzchen/probability_cheatsheet}{github.com/wzchen/probability\_cheatsheet}})
-\end{itemize}
-
-\begin{center}\emph{Please share this cheatsheet with friends!} \url{http://wzchen.com/probability-cheatsheet}\end{center}
-
 \end{multicols*}
 
-\section{Table of Distributions} 
-
-
-\begin{center}
-\renewcommand{\arraystretch}{3.7}
-\begin{tabular}{cccccc}
-\textbf{Distribution} & \textbf{PMF/PDF and Support} & \textbf{Expected Value}  & \textbf{Variance} & \textbf{MGF}\\
-\hline 
-\shortstack{Bernoulli \\ \Bern($p$)} & \shortstack{$P(X=1) = p$ \\$ P(X=0) = q=1-p$} & $p$ & $pq$ & $q + pe^t$ \\
-\hline
-\shortstack{Binomial \\ \Bin($n, p$)} & \shortstack{$P(X=k) = {n \choose k}p^k q^{n-k}$  \\ $k \in \{0, 1, 2, \dots n\}$}& $np$ & $npq$ & $(q + pe^t)^n$ \\
-\hline
-\shortstack{Geometric \\ \Geom($p$)} & \shortstack{$P(X=k) = q^kp$  \\ $k \in \{$0, 1, 2, \dots $\}$}& $q/p$ & $q/p^2$ & $\frac{p}{1-qe^t}, \, qe^t < 1$\\
-\hline
-\shortstack{Negative Binomial \\ \NBin($r, p$)} & \shortstack{$P(X=n) = {r + n - 1 \choose r -1}p^rq^n$ \\ $n \in \{$0, 1, 2, \dots $\}$} & $rq/p$ & $rq/p^2$ &  $(\frac{p}{1-qe^t})^r, \, qe^t < 1$\\
-\hline
-\shortstack{Hypergeometric \\ \Hypergeometric($w, b, n$)} & \shortstack{$P(X=k) = \sfrac{{w \choose k}{b \choose n-k}}{{w + b \choose n}}$ \\ $k \in \{0, 1, 2, \dots,  n\}$} & $\mu = \frac{nw}{b+w}$ &$\left(\frac{w+b-n}{w+b-1} \right) n\frac{\mu}{n}(1 - \frac{\mu}{n})$& messy  \\
-\hline
-\shortstack{Poisson \\ \Pois($\lambda$)} & \shortstack{$P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!}$ \\ $k \in \{$0, 1, 2, \dots $\}$} & $\lambda$ & $\lambda$ & $e^{\lambda(e^t-1)}$ \\
-\hline
-\hline
-\shortstack{Uniform \\ \Unif($a, b$)} & \shortstack{$ f(x) = \frac{1}{b-a}$ \\$ x \in (a, b) $} & $\frac{a+b}{2}$ & $\frac{(b-a)^2}{12}$ &  $\frac{e^{tb}-e^{ta}}{t(b-a)}$\\
-\hline
-\shortstack{Normal \\ $\N(\mu, \sigma^2)$} & \shortstack{$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\sfrac{(x - \mu)^2}{(2 \sigma^2)}}$ \\ $x \in (-\infty, \infty)$} & $\mu$  & $\sigma^2$ & $e^{t\mu + \frac{\sigma^2t^2}{2}}$\\
-\hline
-\shortstack{Exponential \\ $\Expo(\lambda)$} & \shortstack{$f(x) = \lambda e^{-\lambda x}$\\$ x \in (0, \infty)$} & $\frac{1}{\lambda}$  & $\frac{1}{\lambda^2}$ & $\frac{\lambda}{\lambda - t}, \, t < \lambda$\\
-\hline
-\shortstack{Gamma \\ $\Gam(a, \lambda)$} & \shortstack{$f(x) = \frac{1}{\Gamma(a)}(\lambda x)^ae^{-\lambda x}\frac{1}{x}$\\$ x \in (0, \infty)$} & $\frac{a}{\lambda}$  & $\frac{a}{\lambda^2}$ & $\left(\frac{\lambda}{\lambda - t}\right)^a, \, t < \lambda$\\
-\hline
-\shortstack{Beta \\ \Beta($a, b$)} & \shortstack{$f(x) = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{a-1}(1-x)^{b-1}$\\$x \in (0, 1) $} & $\mu = \frac{a}{a + b}$  & $\frac{\mu(1-\mu)}{(a + b + 1)}$ & messy \\
-\hline
-\shortstack{Log-Normal \\ $\mathcal{LN}(\mu,\sigma^2)$} & \shortstack{$\frac{1}{x\sigma \sqrt{2\pi}}e^{-(\log x - \mu)^2/(2\sigma^2)}$\\$x \in (0, \infty)$} & $\theta = e^{ \mu + \sigma^2/2}$ & $\theta^2 (e^{\sigma^2} - 1)$ & doesn't exist\\
-\hline
-\shortstack{Chi-Square \\ $\chi_n^2$} & \shortstack{$\frac{1}{2^{n/2}\Gamma(n/2)}x^{n/2 - 1}e^{-x/2}$\\$x \in (0, \infty) $} & $n$  & $2n$ & $(1 - 2t)^{-n/2}, \, t < 1/2$\\
-\hline
-\shortstack{Student-$t$ \\ $t_n$} & \shortstack{$\frac{\Gamma((n+1)/2)}{\sqrt{n\pi} \Gamma(n/2)} (1+x^2/n)^{-(n+1)/2}$\\$x \in (-\infty, \infty)$} & $0$ if $n>1$ & $\frac{n}{n-2}$ if $n>2$ & doesn't exist\\
-\hline
-\end{tabular}
-\end{center}
 
 
 \end{document}
