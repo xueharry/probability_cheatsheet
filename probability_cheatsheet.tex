@@ -1147,7 +1147,20 @@ William and Sebastian play a modified game of Settlers of Catan, where every tur
     \item What is the expected amount of moves it will take for the robber to return to the center tile? \textbf{Answer:} Since this chain is irreducible and aperiodic, to get the expected time to return we can just invert the stationary probability. Thus on average it will take $\boxed{14}$ turns for the robber to return to the center tile.
 \end{enumerate}
 
-
+\subsection{Monty Hall}
+Assume contestant picks door 1, assume switching strategy, condition on location of car
+\subsection{Store with random number of customers}
+$E(X)=E(E(X|N))=E(N\mu)=\mu E(N)$\\
+$Var(X)=\sigma^2E(N)+\mu^2Var(N)$
+\subsection{Bayes' Billiards}
+$\int_0^1 \binom{n}{k}x^k(1-x)^{n-k}dx=\frac{1}{n+1}$
+\subsection{Metropolis Algorithm}
+Starting with a proposal chain, we generate a new chain. Let $X_0$ be any starting state and generate a chain $X_0$, $X_1$,... such that each "move" is as follows. If the chain is currently at state $i$, then:
+\begin{enumerate}
+\item Generate a proposal state $j$ according to the original transition probability\\
+\item Accept the proposal with probability $min(1, \frac{d_i}{d_j})$. If the proposal is accepted, go to $j$; otherwise, stay at $i$.
+\end{enumerate}
+\subsection{Tips}
 \end{multicols*}
 
 
